@@ -1,0 +1,271 @@
+{% load static %}
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+   -->
+<!DOCTYPE html>
+<html lang="zxx">
+   <head>
+      <title>Inside-Art a Blogging Category Bootstrap responsive Website Template | Home :: w3layouts</title>
+      <!--meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Inside-Art Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+      <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+      <!--//meta tags ends here-->
+      <!--booststrap-->
+      <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+      <!--//booststrap end-->
+      <!-- font-awesome icons -->
+      <link href="{% static 'css/fontawesome-all.min.css' %}" rel="stylesheet" type="text/css" media="all">
+      <!-- //font-awesome icons -->
+      <!--lightbox slider-->
+      <link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+      <!-- lightbox slider-->
+      <!--stylesheets-->
+      <link href=" {% static 'css/style.css' %}" rel='stylesheet' type='text/css' media="all">
+      <!--//stylesheets-->
+      <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+   </head>
+   <body>
+      <div class="header-outs" id="header">
+         <div class="headder-nav-icon">
+            <!--//navigation section -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+               <div class="icons">
+                  <ul>
+                     <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                     <li><a href="#"><span class="fas fa-envelope"></span></a></li>
+                     <li><a href="#"><span class="fas fa-rss"></span></a></li>
+                     <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                     <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                  </ul>
+               </div>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+               <div>
+                  <form action="/search_blog/" method="GET">
+                  <input type="search" class="search__input" name="search" placeholder="search Blogs"
+								onload="equalWidth()" required>
+                  <i class="fa fa-search" aria-hidden="true"></i>
+               </form>
+               </div>
+                  <ul class="navbar-nav ">
+                  
+                    
+                {% if home %}
+                     <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                {% endif %}
+
+                {% if about %}
+                     <li class="nav-item active">
+                        <a href="/about/" class="nav-link">about</a>
+                     </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="/about/" class="nav-link">about</a>
+                    </li>
+                     
+                    
+                {% endif %}
+
+                {% if serivce %}
+                     <li class="nav-item dropdown activate">
+                        <a class="nav-link dropdown-toggle" href="/service/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        service
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="nav-link" href="errorpage.html">404 Page</a>
+                           <a class="nav-link " href="typography.htl">Typography</a>
+                           <a class="nav-link " href="blog.html">Blog</a>
+                           <a class="nav-link " href="blog_one.html">Blog-1</a>
+                        </div>
+                     </li>
+                {% else %}
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/service/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    service
+                        </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="nav-link" href="errorpage.html">404 Page</a>
+                            <a class="nav-link " href="typography.htl">Typography</a>
+                            <a class="nav-link " href="blog.html">Blog</a>
+                            <a class="nav-link " href="blog_one.html">Blog-1</a>
+                        </div>
+                    </li>
+                {% endif %}
+                {% if contact %}
+                     <li class="nav-item activate">
+                        <a href="/contact/" class="nav-link">Contact</a>
+                     </li>
+                    
+                {% else %}
+                    <li class="nav-item">
+                        <a href="/contact/" class="nav-link">Contact</a>
+                    </li>
+                {% endif %}
+                {% if userdata %}
+               
+            
+                  <li class="nav-item">
+                     <a href="/my_profile/" class="nav-link">{{userdata.first_name}}</a>
+                  </li>
+                    <!-- <li class="nav-item">
+                        <a href="" class="nav-link">{{userdata.first_name}}</a>
+                    </li>
+                    <li class="nav-item activate"> -->
+                        <a href="/logout/" class="nav-link">Logout</a>
+                    </li>
+                {% else %} 
+                    <li class="nav-item">
+                        <a href="/login/" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/register/" class="nav-link">register</a>
+                     </li>
+
+                   
+                {% endif %}
+                  </ul>
+               </div>
+            </nav>
+			 <div class="clearfix"></div>
+         </div>
+      </div>
+      
+{% block content %}
+
+{% endblock %}
+<!--Footer -->
+<section class="buttom-footer py-lg-5 py-md-4 py-sm-3 py-3">
+    <div class="headder-logo-icon text-center">
+       <span class="fab fa-accusoft"></span> 
+       <h2><a href="/">Inside-Art</a></h2>
+    </div>
+    <div class="buttom-nav py-3">
+       <nav class="border-line">
+          <ul class="nav justify-content-center">
+          
+             <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+                <a href="/about/" class="nav-link ">About</a>
+             </li>
+             <li class="nav-item">
+                <a href="/service/" class="nav-link">Services</a>
+             </li>
+             <li class="nav-item">
+                <a href="/contact/" class="nav-link">Contact</a>
+             </li>
+          </ul>
+       </nav>
+    </div>
+ </section>
+ <footer>
+    <div class="footer-bottom py-lg-4 py-3 text-center">
+       <p>©2018 Inside-Art. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a></p>
+    </div>
+ </footer>
+ <!-- //Footer -->
+ <!--js working-->
+ <script src='js/jquery-2.2.3.min.js'></script>
+ <!--//js working-->
+ <!--  light box js -->
+ <script src="js/lightbox-plus-jquery.min.js"> </script> 
+ <!-- //light box js-->   
+ <!--responsiveslides banner-->
+ <script src="js/responsiveslides.min.js"></script>
+ <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+            auto: true,
+            pager:true ,
+            nav:false,
+            speed: 900,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+    
+    });
+ </script>
+ <!--// responsiveslides banner-->	 
+ <!--Slider flexiselDemo3-->	
+ <script src="js/jquery.flexisel.js"></script>  
+ <script>
+    $("#flexiselDemo3").flexisel({
+     visibleItems: 4,
+     itemsToScroll: 1,         
+     autoPlay: {
+         enable: true,
+         interval:2000,
+         pauseOnHover: true
+     }        
+    });
+ </script>
+ <!--Slider flexiselDemo3-->	  
+ <!-- start-smoth-scrolling -->
+ <script src="js/move-top.js"></script>
+ <script src="js/easing.js"></script>
+ <script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 900);
+        });
+    });
+ </script>
+ <!-- start-smoth-scrolling -->
+ <!-- here stars scrolling icon -->
+ <script>
+    $(document).ready(function () {
+    
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1100,
+            easingType: 'linear'
+        };
+    
+    
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+    
+    });
+ </script>
+ <!-- //here ends scrolling icon -->
+ <!--bootstrap working-->
+ <script src="js/bootstrap.min.js"></script>
+ <!-- //bootstrap working-->
+</body>
+</html>

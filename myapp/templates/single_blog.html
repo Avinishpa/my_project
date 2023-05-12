@@ -1,0 +1,63 @@
+{% extends 'header&footer.html' %}
+{% load static %}
+{% block content %}
+<center>
+
+    <section class="about-inner py-lg-4 py-md-3 py-sm-3 py-3">
+        <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
+           <div class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">
+              <h3>Single Blogs</h3>
+              <span class="label-blue mb-sm-4 mb-3">$ {{donations}}</span>
+                            
+                            
+
+           </div>
+           <div class="outs_more-buttn">
+            <a href = "/donate/{{blog.id}}" >Donate Now!!</a>
+           </div>
+
+           <div class="row">
+              <div class="col-lg-4 col-md-4 w3layouts-right-side-img">
+                 <div class="w3layouts-left-side-img">
+                    <img src="{{blog.pic.url}}" alt=" " class="img-fluid">
+                 </div>
+                 <div class="abut-inner-wls-head">
+                    <h4 class="py-3">{{blog.title}}</h4>
+                    <p>{{blog.des}}</p>
+                 </div>
+              </div>
+            
+
+          
+ </section>
+ <div class="pt-lg-4 pt-md-3 pt-3 form-comment">
+    <div class="my-3 leave-comment text-left">
+       <h4>Comments Here</h4>
+    </div>
+    <form class="pt-lg-2" action="/add_comment/{{blog.id}}" method="POST">
+       {% csrf_token %}
+       <div class="form-group contact-forms">
+          <textarea class="form-control" rows="3" name="troll" placeholder="Enter Your Comments"></textarea>
+       </div>
+       <button type="submit" class="far fa-paper-plane mt-lg-3">Comment</button>
+       
+    </form>
+  
+    <!--//comments-form-->
+ </div>
+{% for i in all_comments %}
+ <div class="col-lg-8 col-md-8 col-sm-8 text-left px-0 ser-list-w3layouts">
+   <h4>{{i.user.first_name}}</h4>
+   <div class="pt-3 service-icon-list">
+      <p>{{i.message}}</p>
+   </div>
+   <div class="pt-3 service-icon-list">
+      <li>{{i.time}}</li>
+   </div>
+</div>
+{% endfor %}
+
+ 
+</center>
+
+ {% endblock %}

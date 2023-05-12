@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inside-Art</title>
+</script>
+<!--//meta tags ends here-->
+<!--booststrap-->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+<!--//booststrap end-->
+<!-- font-awesome icons -->
+<link href="{% static 'css/fontawesome-all.min.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- //font-awesome icons -->
+<!--lightbox slider-->
+<link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+<!-- lightbox slider-->
+<!--stylesheets-->
+<link href=" {% static 'css/style.css' %}" rel='stylesheet' type='text/css' media="all">
+<!--//stylesheets-->
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    
+
+
+</head>
+<body>
+    <center>
+    <h1>Login Page</h1>
+    
+    <div class="col-lg-6">
+        <form action="/login/" method="post">
+            {% csrf_token %}
+            {{msg}}
+           <div class=" agile-wls-contact-mid">
+              <div class="form-group contact-forms">
+                 <input type="email" name="email" class="form-control" placeholder="Enter Your Email" required="">
+              </div>
+              <div class=" agile-wls-contact-mid">
+                <div class="form-group contact-forms">
+                   <input type="password" name="password" class="form-control" placeholder="Enter Your Password" required="">
+                </div>
+
+            <div class=" agile-wls-contact-mid">
+              <div class="form-group contact-forms">   
+                <button type="submit" class="btn btn-block sent-butnn">Login</button>
+              </div>
+              
+
+           </div>
+        </form>
+        <a href = "/register/" >Register Now!!</a><br>
+     </div>
+</center>
+
+</body>
+</html>

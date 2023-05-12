@@ -1,0 +1,44 @@
+{% extends 'header&footer.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<center>
+   <div class="col-lg-6">
+      <form action="/add_blog/" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{msg}}
+         <div class=" agile-wls-contact-mid">
+            
+            <div class="form-group contact-forms" >
+               <input type="text" name="title" class="form-control" placeholder="Enter Title" required="" >
+            </div>
+            <div class="form-group contact-forms">
+               <textarea class="form-control" rows="3" placeholder="Write Here.." name="des" required=""></textarea>
+            </div>
+            <div class="align-items-left">
+               <select name="cate" id="Interior">
+               <option value="deodar">deodar</option>
+               <option value="oak'"> oak</option>
+               <option value="Mahogany">Mahogany</option>
+               <option value="Sal">Sal</option>
+               </select>
+           </div>
+           <div >
+            <input type="file" name="foto" id="w3lPhone" placeholder=""required />
+           </div>
+            
+           <div>
+             <button type="submit" class="btn btn-block sent-butnn">Post Blog</button>
+             
+           </div>
+           
+         </div>
+         <br>
+         <br>
+      </form>
+   </div>
+</center>
+{% endblock %}

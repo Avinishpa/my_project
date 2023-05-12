@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Inside-Art</title>
+</script>
+<!--//meta tags ends here-->
+<!--booststrap-->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+<!--//booststrap end-->
+<!-- font-awesome icons -->
+<link href="{% static 'css/fontawesome-all.min.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- //font-awesome icons -->
+<!--lightbox slider-->
+<link rel="stylesheet" href="{% static 'css/lightbox.css' %}">
+<!-- lightbox slider-->
+<!--stylesheets-->
+<link href=" {% static 'css/style.css' %}" rel='stylesheet' type='text/css' media="all">
+<!--//stylesheets-->
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    
+
+
+</head>
+<body>
+    <center>
+    <h1>Email Verification</h1>
+    
+    <div class="col-lg-6">
+        <form action="/otp/" method="post">
+            {% csrf_token %}
+            {{msg}}
+           <div class=" agile-wls-contact-mid">
+              <div class="form-group contact-forms">
+                 <input type="text" name="u_otp" class="form-control" placeholder="Enter Your OTP" required="">
+              </div>
+              
+            <div class=" agile-wls-contact-mid">
+              <div class="form-group contact-forms">   
+                <button type="submit" class="btn btn-block sent-butnn">Verify Email</button>
+              </div>
+              <form action="/resend/" method="post"></form>
+              <div class=" agile-wls-contact-mid">
+               <div class="form-group contact-forms">   
+                 <button type="submit"  class="btn btn-block sent-butnn">Resend</button>
+               </div>
+              </form>
+
+           </div>
+        </form>
+     </div>
+</center>
+
+</body>
+</html>

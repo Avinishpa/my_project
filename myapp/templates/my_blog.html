@@ -1,0 +1,33 @@
+{% extends 'header&footer.html' %}
+{% load static %}
+{% block content %}
+<div class="mt-lg-4 mt-3 address_mail_footer_grids">
+    <div class="title text-center mb-lg-4 mb-md-3 mb-3">
+        <br>
+       <h3>Blog</h3>
+       {% for i in blogs %}
+       <div class="footer-grid row mb-3">
+          <div class="col-lg-4 col-md-6 col-sm-6 col-5 text-right">
+             <img src="{{i.pic.url}}" alt=" " class="img-fluid">
+          </div>
+
+          <div class="col-lg-8 col-md-6 col-sm-6 col-7 bottom-para px-0">
+             <h6><a href="/singleblog/{{i.id}}" >{{i.title}}</a></h6>
+             <div class="news-date-list pt-2">
+                <ul>
+                   <li><a href="/singleblog/{{i.id}}" class="clr-two">{{i.time}}</a></li>
+                   <li><a href="/singleblog/{{i.id}}" class="clr-two">{{i.user.first_name}}</a></li>
+                </ul>
+             </div>
+          </div>
+       </div>
+       {% endfor %}
+    </div>
+    <div class="dance-agile-info">
+    </div>
+ </div>
+             
+
+      
+      
+    {% endblock %}
